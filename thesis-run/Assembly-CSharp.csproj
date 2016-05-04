@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\BackgroundGenerator.cs" />
      <Compile Include="Assets\Scripts\BackgroundImages.cs" />
      <Compile Include="Assets\Scripts\FloorScroller.cs" />
+     <Compile Include="Assets\Scripts\GameMechanic.cs" />
      <Compile Include="Assets\Scripts\GameProgressBar.cs" />
      <Compile Include="Assets\Scripts\PlayerSettings.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
@@ -163,10 +164,10 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="OSCsharp">
- <HintPath>/Users/mariuskueng/projects/sdent/thesis-run/Assets/TouchScript/Modules/TUIO/Libraries/OSCsharp.dll</HintPath>
+ <HintPath>/Users/raphaelbrunner/Documents/FHNW/Semester6/sdent/sdent/thesis-run/Assets/TouchScript/Modules/TUIO/Libraries/OSCsharp.dll</HintPath>
  </Reference>
  <Reference Include="TUIOsharp">
- <HintPath>/Users/mariuskueng/projects/sdent/thesis-run/Assets/TouchScript/Modules/TUIO/Libraries/TUIOsharp.dll</HintPath>
+ <HintPath>/Users/raphaelbrunner/Documents/FHNW/Semester6/sdent/sdent/thesis-run/Assets/TouchScript/Modules/TUIO/Libraries/TUIOsharp.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

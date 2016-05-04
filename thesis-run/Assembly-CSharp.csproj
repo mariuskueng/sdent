@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\FloorScroller.cs" />
      <Compile Include="Assets\Scripts\GameMechanic.cs" />
      <Compile Include="Assets\Scripts\GameProgressBar.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\PlayerSettings.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />

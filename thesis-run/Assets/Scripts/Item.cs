@@ -11,13 +11,12 @@ public class Item : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		var lanePos = Screen.width / (lanes.Length + 1);
+		float pos = 1f / 4f;
 		for (var i = 0; i < lanes.Length; i++) {
-			lanes [i] = lanePos * (i + 1);
-			Debug.Log (lanes [i]);
+			lanes [i] = pos * (i + 1);
 		}
 		lane = lanes [getLane ()];
-		transform.position = new Vector2 (lane, 10f);
+		transform.position = Camera.main.ViewportToWorldPoint(new Vector3(lane, 1f, 10f));
 		GetComponent<Rigidbody2D> ().velocity = velocity;
 	}
 	

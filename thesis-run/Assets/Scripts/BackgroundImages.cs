@@ -16,7 +16,7 @@ public class BackgroundImages : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float step = speed * Time.deltaTime;
-		transform.position = Vector3.MoveTowards (transform.position, target , -step);
+		transform.position = Vector3.MoveTowards (transform.position, target , step);
 		if (transform.position.y < -12) {
 			Destroy (gameObject);
 		}

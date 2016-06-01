@@ -54,7 +54,7 @@ public class Player : MonoBehaviour {
 
 		if ((position + horizontal) >= 0 && (position + horizontal) < lanes.Length) {
 			position += horizontal;
-			transform.position = Camera.main.ViewportToWorldPoint(new Vector3(lanes[position], 0f, 10f));
+			transform.position = Camera.main.ViewportToWorldPoint(new Vector3(lanes[position], 0.1f, 10f));
 		}
 	}
 }

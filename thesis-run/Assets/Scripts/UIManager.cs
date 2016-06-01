@@ -19,6 +19,14 @@ public class UIManager : MonoBehaviour {
 		SceneManager.LoadScene ("Level01");
 	}
 
+	public void RestartGame() {
+		SceneManager.LoadScene ("Level01");
+	}
+
+	public void ShowMenu() {
+		SceneManager.LoadScene ("menu");
+	}
+
 	// Use this for initialization
 	void Start () {
 	

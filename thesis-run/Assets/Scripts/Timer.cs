@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour {
 
 	double countdown = 60f; // seconds
 	public Text timerLabel;
-	public GameObject losePanel;
+	public GameMechanic mechanic;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour {
 	void Update () {
 		if (countdown == 0) {
 			// end level
-			losePanel.SetActive(true);
+			mechanic.GameLost();
 		}
 		timerLabel.text = formatTime();
 	}

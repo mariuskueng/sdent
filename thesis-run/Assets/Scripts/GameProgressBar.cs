@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameProgressBar : MonoBehaviour {
 
 	public Image progressBar;
-	public GameObject winPanel;
+	public GameMechanic mechanic;
 	float time = 0f;
 
 	// Use this for initialization
@@ -18,7 +18,7 @@ public class GameProgressBar : MonoBehaviour {
 	void Update () {
 		if (time == 60) {
 			// win
-			winPanel.SetActive(true);
+			mechanic.GameWon();
 		}
 		progressBar.rectTransform.sizeDelta = new Vector2 (10 + (time * 4), 20f);
 	}

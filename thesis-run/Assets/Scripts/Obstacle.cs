@@ -5,6 +5,7 @@ public class Obstacle : MonoBehaviour {
 
 	public GameObject mechanic;
 	public Vector2 velocity = new Vector2(0, -4);
+	private GameObject sound;
 
 	float[] lanes = new float[3];
 	private float lane;
@@ -21,6 +22,7 @@ public class Obstacle : MonoBehaviour {
 		GetComponent<Rigidbody2D> ().velocity = velocity;
 
 		mechanic = GameObject.Find ("Mechanics");
+		sound = GameObject.Find ("SoundObstacle");
 	}
 
 	// Update is called once per frame
@@ -37,6 +39,9 @@ public class Obstacle : MonoBehaviour {
 
 		// update Timer here
 		mechanic.GetComponent<GameMechanic>().DecreaseTime();
+
+		// play sound
+		sound.GetComponent<AudioSource>().Play ();
 	}
 
 	int getLane(){

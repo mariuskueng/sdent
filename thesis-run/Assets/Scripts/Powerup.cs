@@ -5,6 +5,7 @@ public class Powerup : MonoBehaviour {
 
 	public GameObject mechanic;
 	public Vector2 velocity = new Vector2(0, -4);
+	private GameObject sound;
 
 	float[] lanes = new float[3];
 	private float lane;
@@ -21,6 +22,7 @@ public class Powerup : MonoBehaviour {
 		GetComponent<Rigidbody2D> ().velocity = velocity;
 
 		mechanic = GameObject.Find ("Mechanics");
+		sound = GameObject.Find ("SoundPowerUp");
 	}
 
 	// Update is called once per frame
@@ -37,6 +39,9 @@ public class Powerup : MonoBehaviour {
 
 		// update progressBar here
 		mechanic.GetComponent<GameMechanic>().IncreaseTime();
+
+		// play sound
+		sound.GetComponent<AudioSource>().Play ();
 	}
 
 	int getLane(){

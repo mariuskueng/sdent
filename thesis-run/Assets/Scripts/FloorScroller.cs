@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FloorScroller : MonoBehaviour {
 
-	public float speed = 0.2f;
+	float speed = 0.35f;
 	public Renderer rend;
 
 	// Use this for initialization

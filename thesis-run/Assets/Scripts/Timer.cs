@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (countdown == 0) {
+		if (countdown <= 0) {
 			// end level
 			mechanic.GameLost();
 		}
@@ -31,6 +31,13 @@ public class Timer : MonoBehaviour {
 
 	void increaseTime() {
 		this.countdown++;
+	}
+
+	public void UpdateTime(double seconds) {
+		this.countdown += seconds;
+		if (this.countdown < 0 || mechanic.HasGameEnded()) {
+			this.countdown = 0;
+		}
 	}
 
 	string formatTime() {

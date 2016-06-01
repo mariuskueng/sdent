@@ -10,6 +10,7 @@ public class GameMechanic : MonoBehaviour {
 	private bool loseCheck = false;
 
 	public GameObject gameMusic;
+	public Timer timer;
 
 	// Use this for initialization
 	void Start () {
@@ -37,11 +38,15 @@ public class GameMechanic : MonoBehaviour {
 		gameMusic.SetActive (false);
 	}
 
+	public bool HasGameEnded() {
+		return winCheck || loseCheck;
+	}
+
 	public void IncreaseTime () {
-		
+		timer.UpdateTime (5);
 	}
 
 	public void DecreaseTime () {
-		
+		timer.UpdateTime (-10);
 	}
 }

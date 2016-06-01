@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Powerup : MonoBehaviour {
 
-	public GameMechanic mechanics;
+	public GameObject mechanic;
 	public Vector2 velocity = new Vector2(0, -4);
 
 	float[] lanes = new float[3];
@@ -19,6 +19,8 @@ public class Powerup : MonoBehaviour {
 		//		lane = lanes [1]; // for testing we positin the item in the center
 		transform.position = Camera.main.ViewportToWorldPoint(new Vector3(lane, 1f, 10f));
 		GetComponent<Rigidbody2D> ().velocity = velocity;
+
+		mechanic = GameObject.Find ("Mechanics");
 	}
 
 	// Update is called once per frame
@@ -30,10 +32,11 @@ public class Powerup : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
-		Debug.Log ("Powerup collision with player!");
+		// Powerup collision with player!
 		Destroy (gameObject);
 
 		// update progressBar here
+		mechanic.GetComponent<GameMechanic>().IncreaseTime();
 	}
 
 	int getLane(){

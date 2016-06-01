@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Obstacle : MonoBehaviour {
 
-	public GameMechanic mechanics;
+	public GameObject mechanic;
 	public Vector2 velocity = new Vector2(0, -4);
 
 	float[] lanes = new float[3];
@@ -19,6 +19,8 @@ public class Obstacle : MonoBehaviour {
 		//		lane = lanes [1]; // for testing we positin the item in the center
 		transform.position = Camera.main.ViewportToWorldPoint(new Vector3(lane, 1f, 10f));
 		GetComponent<Rigidbody2D> ().velocity = velocity;
+
+		mechanic = GameObject.Find ("Mechanics");
 	}
 
 	// Update is called once per frame
@@ -30,10 +32,11 @@ public class Obstacle : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
-		Debug.Log ("Obstacle collision with player!");
+		// Obstacle collision with player!
 		Destroy (gameObject);
 
-		// update progressBar here
+		// update Timer here
+		mechanic.GetComponent<GameMechanic>().DecreaseTime();
 	}
 
 	int getLane(){
